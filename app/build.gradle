@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
@@ -43,4 +44,20 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     implementation project(':libIAP')
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = 'com.github.voliohiendx'
+                artifactId = 'libraryIap'
+                version = '1.0.2'
+
+                pom {
+                    description = 'A description of my library'
+                }
+            }
+        }
+    }
 }
