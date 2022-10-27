@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+/libIAP/build/
+
+/libIAP/.idea/
+
+/libIAP/gradle/
